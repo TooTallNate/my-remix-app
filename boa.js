@@ -32,6 +32,10 @@ async function main() {
     handler: 'index.js',
     launcherType: 'Nodejs',
     shouldAddHelpers: true,
+    environment: {
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/postgres",
+      SESSION_SECRET: "e56f3660740740cf8eda6b1be120eaf3"
+    }
   };
   fs.writeJSONSync(join(funcDir, '.vc-config.json'), fnConfig, { spaces: 2 });
 
