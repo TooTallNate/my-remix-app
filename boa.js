@@ -27,6 +27,13 @@ async function main() {
     fs.mkdirpSync(join(funcDir, dirname(file)));
     fs.copySync(file, join(funcDir, file));
   }
+  const fnConfig = {
+    runtime: 'node14.x',
+    entrypoint: 'index.js',
+    launcherType: 'Nodejs',
+    shouldAddHelpers: true,
+  };
+  fs.writeJSONSync(join(funcDir, '.vc-config.json'), fnConfig, { spaces: 2 });
 
   const config = {
     version: 3,
