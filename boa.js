@@ -28,8 +28,8 @@ async function main() {
     fs.copySync(file, join(funcDir, file));
   }
   const fnConfig = {
-    runtime: 'node14.x',
-    entrypoint: 'index.js',
+    runtime: 'nodejs14.x',
+    handler: 'index.js',
     launcherType: 'Nodejs',
     shouldAddHelpers: true,
   };
